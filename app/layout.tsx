@@ -7,6 +7,7 @@ import Link from "next/link";
 import { BotMessageSquare } from "lucide-react";
 import Sidebar from "./sidebar";
 import Deals from "./deals";
+import MainHeader from "./main-header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,7 +62,10 @@ export default function RootLayout({
           </Avatar.Root>
         </div>
         <Sidebar />
-        <main className="w-full h-full bg-white rounded-2xl">{children}</main>
+        <main className="w-full h-full bg-white rounded-2xl">
+          <MainHeader/>
+          {children}
+        </main>
         <Deals />
       </body>
     </html>
