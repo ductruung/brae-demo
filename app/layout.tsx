@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { Avatar } from "radix-ui";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -27,7 +29,28 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} grid grid-cols-[1fr_4fr_1fr] grid-rows-[64px_auto] gap-x-4 px-4 pb-4 bg-gray-200 w-screen h-screen antialiased`}
       >
-        <div className="col-span-full"></div>
+        <div className="col-span-full flex items-center justify-between">
+          <Image
+            src="brae-icon.svg"
+            alt="Brae logo"
+            width={32}
+            height={32}
+            className="select-none"
+          />
+          <Avatar.Root className="inline-flex size-[36px] select-none items-center justify-center overflow-hidden rounded-full bg-blackA1 align-middle border border-gray-400">
+            <Avatar.Image
+              className="size-full rounded-[inherit] object-cover"
+              src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80"
+              alt="Colm Tuite"
+            />
+            <Avatar.Fallback
+              className="leading-1 flex size-full items-center justify-center bg-white text-[15px] font-medium text-violet11"
+              delayMs={600}
+            >
+              CT
+            </Avatar.Fallback>
+          </Avatar.Root>
+        </div>
         <aside className="w-full h-full bg-white rounded-2xl"></aside>
         <main className="w-full h-full bg-white rounded-2xl">{children}</main>
         <aside className="w-full h-full bg-white rounded-2xl"></aside>
