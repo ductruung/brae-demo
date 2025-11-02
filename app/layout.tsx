@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Avatar } from "radix-ui";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import { BotMessageSquare } from "lucide-react";
+import Sidebar from "./sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +14,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
 });
 
@@ -27,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} grid grid-cols-[1fr_4fr_1fr] grid-rows-[64px_auto] gap-x-4 px-4 pb-4 bg-gray-200 w-screen h-screen antialiased`}
+        className={`${dmSans.className} grid grid-cols-[1fr_4fr_1fr] grid-rows-[64px_auto] gap-x-4 px-4 pb-4 bg-gray-200 w-screen h-screen antialiased`}
       >
         <div className="col-span-full flex items-center justify-between">
           <Image
@@ -51,7 +59,7 @@ export default function RootLayout({
             </Avatar.Fallback>
           </Avatar.Root>
         </div>
-        <aside className="w-full h-full bg-white rounded-2xl"></aside>
+        <Sidebar />
         <main className="w-full h-full bg-white rounded-2xl">{children}</main>
         <aside className="w-full h-full bg-white rounded-2xl"></aside>
       </body>
