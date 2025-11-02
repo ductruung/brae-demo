@@ -25,9 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} grid grid-cols-[1fr_4fr_1fr] grid-rows-[64px_auto] gap-x-4 px-4 pb-4 bg-gray-200 w-screen h-screen antialiased`}
       >
-        {children}
+        <div className="col-span-full"></div>
+        <aside className="w-full h-full bg-white rounded-2xl"></aside>
+        <main className="w-full h-full bg-white rounded-2xl">{children}</main>
+        <aside className="w-full h-full bg-white rounded-2xl"></aside>
       </body>
     </html>
   );
