@@ -1,11 +1,15 @@
+const shimmer =
+  'before:absolute before:inset-0 before:-translate-x-full ' +  
+  'before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:animate-[shimmer_2s_infinite]';
+
 export function DealSkeleton() {
   return (
-    <div className="flex p-4 gap-4">
+    <div className={`flex p-4 pl-3.5 gap-4 relative overflow-hidden ${shimmer}`}>
       {/**Icon */}
-      <div className="size-[24px] bg-green-500"></div>
+      <div className="w-[38px] bg-gray-200 rounded"></div>
       <div className="w-full pr-4 space-y-1">
-        <div className="bg-orange-500 h-[16px] w-full"></div>
-        <div className="bg-blue-500 w-[42px] h-[8px]"></div>
+        <div className="bg-gray-200 h-[16px] w-full rounded-full"></div>
+        <div className="bg-gray-200 w-[42px] h-[8px] rounded-full"></div>
       </div>
     </div>
   )
