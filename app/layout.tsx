@@ -6,6 +6,7 @@ import "./globals.css";
 import Link from "next/link";
 import { BotMessageSquare } from "lucide-react";
 import Sidebar from "./sidebar";
+import Deals from "./deals";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.className} grid grid-cols-[1fr_4fr_1fr] grid-rows-[64px_auto] gap-x-4 px-4 pb-4 bg-gray-200 w-screen h-screen antialiased`}
+        className={`${dmSans.className} grid grid-cols-[minmax(0,1fr)_4fr_minmax(0,1fr)] grid-rows-[64px_auto] gap-x-4 px-4 pb-4 bg-gray-200 w-screen h-screen antialiased`}
       >
         <div className="col-span-full flex items-center justify-between">
           <Image
@@ -61,7 +62,7 @@ export default function RootLayout({
         </div>
         <Sidebar />
         <main className="w-full h-full bg-white rounded-2xl">{children}</main>
-        <aside className="w-full h-full bg-white rounded-2xl"></aside>
+        <Deals />
       </body>
     </html>
   );
