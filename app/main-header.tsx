@@ -30,9 +30,9 @@ export default function MainHeader() {
         </div>);
     case "/workflows/deal-situation-overview":
       return (
-        <div className="flex px-4 py-2 border-b border-gray-200">
-          <Link href="/workflows">Workflows</Link>
-          <ChevronRight />
+        <div className="flex px-4 py-2 border-b border-gray-200 gap-2 items-center">
+          <Link className="font-medium hover:underline" href="/workflows">Workflows</Link>
+          <ChevronRight className="size-[18px]"/>
           <h1 className="text-base font-medium">Deal situation overview</h1>
         </div>);
   }

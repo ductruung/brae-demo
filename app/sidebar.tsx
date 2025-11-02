@@ -7,6 +7,8 @@ import clsx from "clsx";
 
 export default function Sidebar() {
   const pathName = usePathname();
+  const segments = pathName.split("/");
+  console.log(segments);
   const items = [
     {
       name: "Assistant",
@@ -41,7 +43,7 @@ export default function Sidebar() {
             <Link
               className={clsx(
                 "p-4 flex gap-4 items-center rounded-lg",
-                pathName === item.link ? "bg-gray-200" : "hover:bg-gray-100"
+                "/" + segments[1] === item.link ? "bg-gray-200" : "hover:bg-gray-100"
               )}
               href={item.link}
             >
